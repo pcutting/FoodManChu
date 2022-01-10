@@ -1,10 +1,12 @@
 package com.philipcutting.foodmanchu.dao
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.philipcutting.foodmanchu.models.Ingredient
 
+@Dao
 interface IngredientDao {
     @Query("SELECT * FROM ingredients")
     fun getAll(): List<Ingredient>
@@ -17,6 +19,9 @@ interface IngredientDao {
 
     @Insert
     fun insertAll(vararg ingredients: Ingredient)
+
+    @Insert
+    fun insert(ingredient: Ingredient)
 
     @Delete
     fun delete(ingredient: Ingredient)
