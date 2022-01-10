@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FoodManChu</string>
+    <string name="ingredients">Ingredients</string>
 </resources>
