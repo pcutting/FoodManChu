@@ -1,5 +1,6 @@
 package com.philipcutting.foodmanchu
 
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.room.Room
@@ -26,7 +27,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        val recipes = database?.recipeDao()?.getAll()
-        val ingredients = database?.ingredientDao()?.getAll()
+        AsyncTask.execute {
+            val recipes = database?.recipeDao()?.getAll()
+            val ingredients = database?.ingredientDao()?.getAll()
+        }
     }
 }
